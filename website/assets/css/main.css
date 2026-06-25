@@ -3916,3 +3916,7 @@ input, select, textarea {
     margin-bottom: 0.75em;
     opacity: 0.75;
 }
+
+ul.icons li a {
+    font-size: 1.75rem;
+}
