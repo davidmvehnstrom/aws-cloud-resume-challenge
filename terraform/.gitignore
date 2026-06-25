@@ -1,0 +1,8 @@
+# Terraform state — contains sensitive resource IDs and should never be in version control
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+
+# Lambda zip — generated artifact, not source code
+files/lambda_function.zip

@@ -1,0 +1,5 @@
+#!/bin/bash
+terraform import aws_route53_zone.crc Z09186321HTMYVWMGSPA6
+terraform import aws_route53_record.acm_validation Z09186321HTMYVWMGSPA6__10d5b02bdbff003814dc939fc5e23fce.davidehnstrom.com_CNAME
+terraform import aws_route53_record.crc_a Z09186321HTMYVWMGSPA6_resume.davidehnstrom.com_A
+terraform plan
