@@ -1,0 +1,30 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::374902172089:role/github-actions-crc-role
+          aws-region: us-east-2
+
+      - name: Sync to S3
+        run: aws s3 sync . s3://dmve-cloud-resume-challenge --delete --exclude ".git/*" --exclude ".github/*"
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id EB7H0JY6FAK4 \
+            --paths "/*"
