@@ -4069,3 +4069,13 @@ ul.icons li a {
         gap: 2px;
     }
 }
+
+/* Hero subline */
+
+.hero-subline {
+    font-size: 0.80em;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    margin: -1em 0 2em 0;
+}
+
