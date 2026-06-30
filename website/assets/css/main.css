@@ -3938,6 +3938,15 @@ ul.icons li a {
     display: flex;
     flex-direction: column;
     gap: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
+	transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+	box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cert-card:hover {
+	transform: translateY(-12px) scale(1.08); 
+	box-shadow: 0 20px 38px rgba(0, 0, 0, 0.15); 
+
 }
 
 .cert-card.earned {
@@ -3972,6 +3981,8 @@ ul.icons li a {
     margin-top: 4px;
 }
 
+
+
 .cert-badge.earned {
     background: rgba(80, 82, 181, 0.2);
     color: #9898e0;
@@ -3981,6 +3992,8 @@ ul.icons li a {
     background: rgba(42, 171, 176, 0.2);
     color: #2AABB0;
 }
+
+
 
 @media screen and (max-width: 736px) {
     .cert-grid {
